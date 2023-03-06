@@ -1,0 +1,24 @@
+<ion-header id="header" class="ion-no-border nnn">
+  <img class="logo" src="../../../assets/icon/eci-white.svg" />
+  <app-open></app-open>
+</ion-header>
+
+<ion-content scrollEvents="true" overflow-scroll="true">
+  <div class="container" [hidden]="true">
+    <div class="group">
+      <div class="title">No hay notificaciones</div>
+    </div>
+  </div>
+  <div class="container" [hidden]="false">
+    <div class="group" *ngFor="let notificationGroup of notificationList">
+      <div class="title">{{months[notificationGroup.month]}}</div>
+      <div class="notification" *ngFor="let notification of notificationGroup.value" [ngClass]="{'unread': notification.is_open}" (click)="clickNotification(notification)">
+        <ion-icon name="notifications-circle-outline"></ion-icon>
+        <div class="information">
+          <div class="title">{{notification.title}}</div>
+          <div class="description">{{notification.body}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

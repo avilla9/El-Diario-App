@@ -1,0 +1,19 @@
+<div class="section-container" id="explore">
+  <div class="top-content">
+    <div class="section-name">{{currentTitle}}</div>
+    <app-open></app-open>
+  </div>
+  <div class="scrolling-wrapper">
+    <div class="card" *ngFor="let tab of tabs; let pos = index;" [ngClass]="{'active': pos === activeTab}"
+      (click)="changeTab(pos)">
+      <img class="post-thumb" src="../../../assets/icon/{{tab.icon}}">
+      <p class="body">
+        {{tab.title}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<ion-content scrollEvents="true" overflow-scroll="true">
+  <section #pageContainer></section>
+</ion-content>

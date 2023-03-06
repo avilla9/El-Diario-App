@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="story-content">
+    <div class="progress">
+      <div class="bar" *ngFor="let image of img; let i = index">
+        <ion-progress-bar *ngIf="i < pos" value="1"></ion-progress-bar>
+        <ion-progress-bar *ngIf="i > pos" value="0"></ion-progress-bar>
+        <ion-progress-bar *ngIf="i == pos" value="{{progress}}"></ion-progress-bar>
+      </div>
+    </div>
+    <div class="close" (click)="close()">
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+    <div class="bg-container" style="background-image:url({{img[pos].media_path}});"></div>
+    <div class="navigation-direction">
+      <div class="left" (click)="changeStory('prev')"></div>
+      <div class="right" (click)="changeStory('next')"></div>
+    </div>
+    <img src="{{img[pos].media_path}}">
+    <div class="open-link" *ngIf="img[pos].button_name?.length" (click)="openLink(img[pos].button_link)">
+      <div class="name">
+        {{img[pos].button_name}}
+      </div>
+    </div>
+  </div>
+</ion-content>

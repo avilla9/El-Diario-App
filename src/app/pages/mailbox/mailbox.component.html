@@ -1,0 +1,23 @@
+<div class="section-container">
+  <div class="top-content">
+    <div class="section-name">Buzón</div>
+    <app-open></app-open>
+  </div>
+  <div class="help">¿En qué podemos ayudarte?</div>
+</div>
+
+<ion-content scrollEvents="true" overflow-scroll="true">
+  <div class="mail-form">
+    <div class="error" [hidden]="!error?.length">{{error}}</div>
+    <div class="ok" [hidden]="!ok?.length">{{ok}}</div>
+    <ion-select multiple="false" placeholder="Sugerencia/Incidencia" class="selector" #sugest>
+      <ion-select-option value="Sugerencia">Sugerencia</ion-select-option>
+      <ion-select-option value="Incidencia">Incidencia</ion-select-option>
+    </ion-select>
+    <ion-input placeholder="Código de Agente" #agent></ion-input>
+    <textarea class="description" placeholder="Describe qué necesitas" cols="30" rows="10" #message></textarea>
+    <button class="send" (click)="send({
+      type: sugest.value, agent_code: agent.value, message: message.value
+    })">Enviar</button>
+  </div>
+</ion-content>

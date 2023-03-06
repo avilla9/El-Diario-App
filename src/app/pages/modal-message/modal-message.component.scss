@@ -1,0 +1,36 @@
+#modal-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ion-color-light-contrast);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 15vw;
+
+    .logo {
+        background-color: var(--ion-color-light-contrast);
+    }
+    
+    .message {
+        color: var(--ion-color-light-tint);
+        margin-bottom: 4vw;
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .close {
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 2vw 8vw;
+        font-size: 4vw;
+        line-height: 4vw;
+        font-weight: bold;
+        background-color: var(--ion-color-primary);
+        color: var(--ion-color-primary-contrast);
+        margin-bottom: 4vw;
+    }
+}

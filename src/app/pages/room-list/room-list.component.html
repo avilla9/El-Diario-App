@@ -1,0 +1,22 @@
+<ion-header id="header" class="ion-no-border">
+  <ion-back-button text="" icon="chevron-back-outline" defaultHref="/explora"></ion-back-button>
+  <span>{{list.title}}</span>
+  <app-open></app-open>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+  <div class="container">
+    <div class="post-list" *ngFor="let post of list.articles" (click)="clickPost(post)">
+      <img src="{{post.media_path}}">
+      <div class="content">
+        <div class="title">{{post.title}}</div>
+        <div class="date">{{post.created_at}}</div>
+        <div class="description">{{post.short_description}}</div>
+        <div class="read">
+          <span>LEER MÁS</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

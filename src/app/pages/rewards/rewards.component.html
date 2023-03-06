@@ -1,0 +1,70 @@
+<ion-content [scrollEvents]="true">
+    <div class="container">
+
+        <div class="info">
+            <img src="../../../assets/images/rewards/secicoins-equipo_V2.png">
+        </div>
+
+        <div class="available-coins">
+            <div class="container">
+                <div class="content">
+                    <div class="title">SECI COINS DISPONIBLES</div>
+                    <div class="coins">{{user.secicoins}}</div>
+                </div>
+                <img src="../../../assets/images/rewards/secicoins-banner-logo.png">
+            </div>
+        </div>
+
+        <div class="navigation-menu">
+            <div class="section-ref" *ngFor="let section of posts" (click)="scrollToLabel(section.custom_class)">
+                {{section.section}}
+            </div>
+        </div>
+
+        <div class="section-container">
+            <div *ngFor="let section of posts" id="{{section.custom_class}}" class="section">
+                <div class="section-name">{{section.section}}</div>
+                <div class="subtitle">{{section.subtitle}}</div>
+                <!-- CHALLENGE YOU -->
+                <div class="scrolling-wrapper" *ngIf="section.custom_class == 'challenge-you'">
+                    <div class="card" *ngFor="let article of section.articles" (click)="clickPost(article)">
+                        <div class="content">
+                            <p class="title">{{article.title}}</p>
+                            <p class="body">{{article.short_description}}</p>
+                        </div>
+                        <img class="post-thumb" src="{{article.media_path}}">
+                    </div>
+                </div>
+                <!-- LEARN TODAY -->
+                <div class="scrolling-wrapper" *ngIf="section.custom_class == 'learn-today'">
+                    <div class="card" *ngFor="let article of section.articles">
+                        <img class="post-thumb" src="{{article.media_path}}" (click)="clickPost(article)">
+                        <div class="content" (click)="clickPost(article)">
+                            <p class="title">{{article.title}}</p>
+                            <p class="body">{{article.short_description}}</p>
+                        </div>
+                        <div class="icons">
+                            <ion-icon [className]="article.reactions?.length ? 'icon liked' : 'icon'" [name]="article.reactions?.length ? 'heart' : 'heart-outline'" (click)="like(article, $event)">
+                            </ion-icon>
+                            <ion-icon class="icon" name="share-social-outline" (click)="shareApp(article)"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <!-- WALL OF FAME -->
+                <div class="scrolling-wrapper" *ngIf="section.custom_class == 'wall-of-fame'">
+                    <div class="card" *ngFor="let article of section.articles" (click)="clickPost(article)">
+                        <img class="post-thumb" src="{{article.media_path}}">
+                    </div>
+                </div>
+                <!-- HAPPY BOX -->
+                <div class="scrolling-wrapper" *ngIf="section.custom_class == 'happy-box'">
+                    <div class="card">
+                        <a href="../../../assets/Escaparate SECICOINS_V4_compressed.pdf" target="_blank">
+                            <img class="post-thumb" src="../../../assets/images/rewards/secicoins-escaparate_V2.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

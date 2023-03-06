@@ -1,0 +1,20 @@
+.unShow {
+  ion-tab-bar {
+    display: none;
+  }
+}
+
+.show {
+  ion-tab-bar {
+    display: flex;
+  }
+}
+
+ion-tab-bar {
+  height: 15vw;
+
+  ion-icon {
+    width: 8vw;
+    height: 8vw;
+  }
+}

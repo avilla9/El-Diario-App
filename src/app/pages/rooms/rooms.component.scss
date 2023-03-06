@@ -1,0 +1,38 @@
+.container {
+  padding: 4vw;
+
+  .post-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4vw;
+    margin-bottom: 4vw;
+    border-bottom: 1px solid var(--ion-color-medium);
+
+    img {
+      width: 26vw;
+      border-radius: 2vw;
+      margin-right: 2vw;
+    }
+
+    .content {
+      width: 60vw;
+
+      .title {
+        font-weight: bold;
+        font-size: 4vw;
+        margin-bottom: 1vw;
+      }
+
+      .description {
+        font-size: 3vw;
+      }
+    }
+  }
+
+  .unautorized {
+    background-color: red;
+  }
+}

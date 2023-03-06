@@ -1,0 +1,17 @@
+<app-header></app-header>
+<ion-content overflow-scroll="true">
+    <img *ngIf="post?.media_path?.length" class="post-thumb" src="{{post.media_path}}">
+    <ion-card-header>
+        <ion-icon class="icon liked" name="heart" *ngIf="post?.reactions" (click)="like(post, $event)"></ion-icon>
+        <ion-icon class="icon" name="heart-outline" *ngIf="!post?.reactions" (click)="like(post, $event)"></ion-icon>
+        <ion-icon class="icon" name="share-social-outline" (click)="shareApp(post)"></ion-icon>
+        <ion-card-title>{{post?.title}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content [innerHTML]="post?.description"></ion-card-content>
+
+    <div class="cta" *ngIf="(post?.button_name?.length)">
+        <button (click)="externalPost(post?.button_link)">{{post?.button_name}}</button>
+    </div>
+
+</ion-content>

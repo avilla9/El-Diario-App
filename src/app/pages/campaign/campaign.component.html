@@ -1,0 +1,58 @@
+<div class="content" [hidden]="!pageStatus">
+    <ion-select multiple="false" class="selector" (ionChange)="handleChange($event)" placeholder="Seleccionar campaña">
+        <ion-select-option *ngFor="let campaign of campaignsData; let i = index" [value]="campaign.id">
+            {{campaign.campaign_title}}
+        </ion-select-option>
+    </ion-select>
+
+    <div class="boxes" [hidden]="!campaignSelected">
+        <div class="box" *ngFor="let data of campaignSelected?.slice(0,2); let i = index" (click)="clickBox(data)">
+            <img src="../../../assets/images/campaign/{{i+1}}.jpg">
+            <div class="float-content">
+                <div class="title">{{data.section}}</div>
+            </div>
+        </div>
+
+        <!-- <div class="box" id="open-modal" expand="block">
+      <img src="../../../assets/images/campaign/3.jpg">
+      <div class="float-content">
+        <div class="title">Lo que he conseguido</div>
+      </div>
+    </div> -->
+    </div>
+
+    <div class="select-a-campaign" [hidden]="campaignSelected">
+        Seleccione una campaña
+    </div>
+</div>
+
+<ion-modal trigger="open-modal">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Lo que he conseguido</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="cancel()">Cerrar</ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+            <div class="statistics" [hidden]="!campaignSelected">
+                <div class="scrolling-wrapper">
+                    <div class="container" *ngFor="let kpi of statistics">
+                        <div class="information">
+                            <div class="parameter">{{kpi.parameter}}</div>
+                            <div class="title">{{kpi.title}}</div>
+                        </div>
+                        <canvas baseChart [data]="kpi.doughnutChartData" [labels]="kpi.doughnutChartLabels" [options]="kpi.doughnutChartOptions" [legend]="kpi.doughnutChartLegend" [chartType]="kpi.doughnutChartType" [colors]="kpi.colors">
+            </canvas>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </ng-template>
+</ion-modal>
+
+<div class="content" [hidden]="pageStatus">
+    {{statusMessage}}
+</div>

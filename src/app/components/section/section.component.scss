@@ -1,0 +1,72 @@
+.section-container {
+  padding: 1vw 0 4vw 4vw;
+  margin-bottom: 4vw;
+
+  .section-name {
+    font-size: 24px;
+    margin-bottom: 2vw;
+  }
+
+  .scrolling-wrapper {
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    .card {
+      flex: 0 0 auto;
+      width: 55vw;
+      padding: 0;
+      margin: 0 4vw 0 0;
+      border: 1px solid gray;
+      border-radius: 2vw;
+      position: relative;
+
+      /* display: inline-block;
+      min-height: 70vw;
+      max-height: 70vw;
+      height: 70vw; */
+
+
+      .post-thumb {
+        width: 100%;
+        border-radius: 2vw;
+      }
+
+      .icons {
+        position: absolute;
+        bottom: 4vw;
+        left: 4vw;
+
+        .icon {
+          width: 7vw;
+          height: 7vw;
+          margin-right: 4vw;
+        }
+      }
+
+      .content {
+        padding: 0 4vw 11vw 4vw;
+
+        p {
+          margin: 4vw 0;
+          white-space: normal;
+        }
+
+        .title {
+          font-size: 20px;
+        }
+
+        .body {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}

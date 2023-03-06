@@ -1,0 +1,141 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-alert {
+  .alert-wrapper {
+    width: 90% !important;
+    max-width: 90% !important;
+
+    .alert-message {
+      max-height: unset !important;
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .alert-button-group {
+      padding: 0;
+
+      button {
+        color: black;
+      }
+    }
+  }
+}
+
+.unauth-title {
+  color: black;
+  text-align: center;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+.unauth-alert {
+  border-radius: 2vw;
+  width: 100%;
+}
+
+ion-card-content {
+  p {
+    margin: 0 0 4vw 0 !important;
+  }
+}
+
+.ion-page {
+  background-color: var(--ion-color-light-contrast);
+}
+
+.open-menu {
+  color: var(--ion-color-medium);
+  width: 10vw;
+  height: 10vw;
+}
+
+ion-header::after {
+  background-image: none;
+}
+
+.item-native::after {
+  background-image: none;
+}
+
+ion-menu {
+  --ion-background-color: var(--ion-color-light-contrast);
+  --ion-text-color: var(--ion-color-light);
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw 0;
+
+    .title {
+      color: var(--ion-color-light);
+    }
+
+    .text {
+      margin: 2vw 0 0 0;
+      color: var(--ion-color-medium);
+      font-size: 12px;
+    }
+  }
+
+  ion-toolbar {
+    --background: var(--ion-color-light-contrast);
+  }
+
+  ion-content {
+    position: relative;
+
+    ion-list {
+      ion-item {
+        margin-bottom: 4vw;
+      }
+
+      ion-icon {
+        width: 8vw;
+        height: 8vw;
+        color: var(--ion-color-light);
+        margin-right: 4vw;
+      }
+    }
+
+    .footer {
+      display: flex;
+      position: absolute;
+      bottom: 4vw;
+      padding: 0 12vw;
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

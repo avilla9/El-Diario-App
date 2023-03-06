@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+    <div class="header">
+        <img class="logo" src="../../../assets/icon/eci-white.svg" />
+        <app-open></app-open>
+    </div>
+</ion-header>
+
+<ion-content scrollEvents="true" overflow-scroll="true">
+    <div class="hideable">
+        <div class="greetings">
+            <div class="hello">Hola,</div>
+            <div class="user">{{user?.name}}</div>
+        </div>
+        <div class="to-do">¿Qué quieres hacer hoy?</div>
+        <button (click)="toExplore()">Explora</button>
+    </div>
+
+    <div class="story-list" *ngIf="images?.length">
+        <div class="scroll-horizontal">
+            <div class="scroll-item" *ngFor="let img of images; let position = index">
+                <ion-avatar (click)="openModal(images, position)" class="avatar-md" [ngClass]="{'has-update has-status': !img.view}">
+                    <img src="{{img.media_path}}">
+                </ion-avatar>
+            </div>
+        </div>
+    </div>
+
+    <!-- <app-section></app-section> -->
+    <div class="section-container" *ngFor="let post of posts; let i = index">
+        <div class="section-name">{{post.section}}</div>
+        <div class="scrolling-wrapper">
+            <div class="card" *ngFor="let article of post.articles">
+                <img class="post-thumb" src="{{article.media_path}}" (click)="open(article)">
+                <div class="content" (click)="open(article)">
+                    <p class="title">{{article.title}}</p>
+                    <p class="body">
+                        {{article.short_description}}
+                    </p>
+                </div>
+                <div class="icons">
+                    <ion-icon [className]="article.reactions?.length ? 'icon liked' : 'icon'" [name]="article.reactions?.length ? 'heart' : 'heart-outline'" (click)="like(article, $event)"></ion-icon>
+                    <ion-icon class="icon" name="share-social-outline" (click)="shareApp(article)"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ion-footer class="ion-no-border">
+        <span>{{date}} Created by</span>
+        <img class="tvc-logo" src="../../../assets/icon/tvc-white.svg" />
+    </ion-footer>
+</ion-content>

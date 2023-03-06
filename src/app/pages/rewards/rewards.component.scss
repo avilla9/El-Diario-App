@@ -1,0 +1,190 @@
+.info {
+    position: relative;
+    // height: 59vw;
+    // img {
+    //   width: 70vw;
+    //   position: absolute;
+    //   top: 4vw;
+    //   left: 4vw;
+    //   z-index: 1;
+    // }
+    // .text {
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 4vw;
+    //   padding: 4vw;
+    //   text-align: left;
+    //   background-color: rgb(255, 196, 4, 0.7);
+    //   z-index: 2;
+    //   width: 49vw;
+    // }
+}
+
+.available-coins {
+    padding: 4vw 4vw 0 4vw;
+    .container {
+        padding-top: 4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--ion-color-medium);
+        border-radius: 2vw;
+        overflow: hidden;
+        .content {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2vw;
+            .title {
+                font-size: 4vw;
+                margin-bottom: 2vw;
+            }
+            .coins {
+                font-size: 20vw;
+            }
+        }
+    }
+}
+
+.navigation-menu {
+    padding: 4vw 0 4vw 4vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    .section-ref {
+        flex: 0 0 auto;
+        width: fit-content;
+        padding: 1vw 4vw;
+        margin: 0 2vw 0 0;
+        background-color: #E7E6E6;
+        border-radius: 2vw;
+    }
+}
+
+.navigation-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.section-container {
+    padding: 4vw 0 4vw 4vw;
+    margin-bottom: 0;
+    .section {
+        margin-bottom: 4vw;
+        .section-name {
+            font-size: 24px;
+            margin-bottom: 2vw;
+            width: calc(100% - 4vw);
+            padding: 1vw 2vw;
+            border-radius: 2vw;
+            background-color: var(--ion-color-primary);
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 2vw;
+            color: var(--ion-color-medium);
+            padding-right: 4vw;
+        }
+        .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+            .card {
+                flex: 0 0 auto;
+                width: 55vw;
+                padding: 0;
+                margin: 0 4vw 0 0;
+                border: 1px solid gray;
+                border-radius: 2vw;
+                position: relative;
+                .post-thumb {
+                    width: 100%;
+                    border-radius: 2vw;
+                }
+                .icons {
+                    position: absolute;
+                    bottom: 4vw;
+                    left: 4vw;
+                    .icon {
+                        width: 7vw;
+                        height: 7vw;
+                        margin-right: 4vw;
+                    }
+                    .liked {
+                        color: red;
+                    }
+                }
+                .content {
+                    padding: 0 4vw 11vw 4vw;
+                    p {
+                        margin: 4vw 0;
+                        white-space: normal;
+                    }
+                    .title {
+                        font-size: 20px;
+                    }
+                    .body {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    #challenge-you {
+        .scrolling-wrapper {
+            .card {
+                width: 75vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .content {
+                    padding: 4vw;
+                    p {
+                        margin: 0
+                    }
+                    .title {
+                        font-weight: bold;
+                        margin-bottom: 2vw;
+                    }
+                    .linked {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    #wall-of-fame {
+        .scrolling-wrapper {
+            .card {
+                display: flex;
+                border-radius: 50%;
+                height: 35vw;
+                width: 35vw;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border: 0;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #happy-box {
+        .scrolling-wrapper {
+            padding-right: 4vw;
+            padding-top: 4vw;
+            .card {
+                width: 100%;
+                border: 0;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
