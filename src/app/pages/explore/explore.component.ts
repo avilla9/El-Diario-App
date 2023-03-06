@@ -40,7 +40,7 @@ export class ExploreComponent implements OnInit {
     },
     {
       component: RoomsComponent,
-      title: 'Salas',
+      title: 'Clubes',
       icon: 'estrella.svg',
     },
   ]

@@ -239,7 +239,7 @@ export class RoomsComponent implements OnInit {
   }
 
   getArticles() {
-    this.articleService.articleList('Salas')
+    this.articleService.articleList('Clubes')
       .subscribe((res: any) => {
         console.log(res);
         this.posts = res;

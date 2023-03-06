@@ -2,18 +2,18 @@
     <div class="container">
 
         <div class="info">
-            <img src="../../../assets/images/rewards/secicoins-equipo_V2.png">
+            <img src="../../../assets/images/rewards/header.png">
         </div>
 
-        <div class="available-coins">
+        <!-- <div class="available-coins">
             <div class="container">
                 <div class="content">
-                    <div class="title">SECI COINS DISPONIBLES</div>
-                    <div class="coins">{{user.secicoins}}</div>
+                    <div class="title">SOLES DISPONIBLES</div>
+                    <div class="coins">{{user.soles}}</div>
                 </div>
                 <img src="../../../assets/images/rewards/secicoins-banner-logo.png">
             </div>
-        </div>
+        </div> -->
 
         <div class="navigation-menu">
             <div class="section-ref" *ngFor="let section of posts" (click)="scrollToLabel(section.custom_class)">
@@ -59,8 +59,8 @@
                 <!-- HAPPY BOX -->
                 <div class="scrolling-wrapper" *ngIf="section.custom_class == 'happy-box'">
                     <div class="card">
-                        <a href="../../../assets/Escaparate SECICOINS_V4_compressed.pdf" target="_blank">
-                            <img class="post-thumb" src="../../../assets/images/rewards/secicoins-escaparate_V2.png">
+                        <a>
+                            <img class="post-thumb" src="../../../assets/images/rewards/bannersoles.png">
                         </a>
                     </div>
                 </div>
