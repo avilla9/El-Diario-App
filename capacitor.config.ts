@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.thevaluescorner-ocaso.www',
+  appId: 'com.thevaluescornerocaso.www',
   appName: 'El Diario - Ocaso',
   webDir: 'www',
   bundledWebRuntime: false
