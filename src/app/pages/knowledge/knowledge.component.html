@@ -1,32 +1,31 @@
 <ion-content [scrollEvents]="true">
-  <div class="container">
-    <div class="navigation-menu">
-      <div class="section-ref" *ngFor="let section of posts" (click)="scrollToLabel(section.id)">
-        {{section.section}}
-      </div>
-    </div>
-    <div class="section-container">
-      <div class="section" *ngFor="let section of posts" id="{{section.id}}">
-        <div class="section-name">{{section.section}}</div>
-        <div class="subtitle">{{section.subtitle}}</div>
-        <div class="scrolling-wrapper">
-          <div *ngFor="let article of section.articles">
-            <div class="card" *ngIf="section.section != 'El Trabajo' || section.section != 'La Compañía'">
-              <img class="post-thumb" src="{{article.media_path}}" (click)="clickPost(article)">
-              <div class="content" (click)="clickPost(article)">
-                <p class="title">{{article.title}}</p>
-                <p class="body">{{article.short_description}}</p>
-              </div>
-              <div class="icons">
-                <ion-icon [className]="article.reactions?.length ? 'icon liked' : 'icon'"
-                  [name]="article.reactions?.length ? 'heart' : 'heart-outline'" (click)="like(article, $event)">
-                </ion-icon>
-                <ion-icon class="icon" name="share-social-outline" (click)="shareApp(article)"></ion-icon>
-              </div>
+    <div class="container">
+        <div class="navigation-menu">
+            <div class="section-ref" *ngFor="let section of posts" (click)="scrollToLabel(section.id)">
+                {{section.section}}
             </div>
-          </div>
         </div>
-      </div>
+        <div class="section-container">
+            <div class="section" *ngFor="let section of posts" id="{{section.id}}">
+                <div class="section-name">{{section.section}}</div>
+                <div class="subtitle">{{section.subtitle}}</div>
+                <div class="scrolling-wrapper">
+                    <div class="card" *ngFor="let article of section.articles">
+                        <div *ngIf="section.section != 'El Trabajo' || section.section != 'La Compañía'">
+                            <img class="post-thumb" src="{{article.media_path}}" (click)="clickPost(article)">
+                            <div class="content" (click)="clickPost(article)">
+                                <p class="title">{{article.title}}</p>
+                                <p class="body">{{article.short_description}}</p>
+                            </div>
+                            <div class="icons">
+                                <ion-icon [className]="article.reactions?.length ? 'icon liked' : 'icon'" [name]="article.reactions?.length ? 'heart' : 'heart-outline'" (click)="like(article, $event)">
+                                </ion-icon>
+                                <ion-icon class="icon" name="share-social-outline" (click)="shareApp(article)"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </ion-content>
