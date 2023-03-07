@@ -1,27 +1,31 @@
 .section-container {
-  padding: 2vw 8vw;
+  padding: 10vw 2vw 8vw;
 
   .top-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 6vw;
+    color: white;
 
     .section-name {
       font-size: 24px;
       font-weight: bold;
+      color: white;
     }
 
     .open-menu {
       color: var(--ion-color-medium);
       width: 10vw;
       height: 10vw;
+
     }
   }
 
   .help {
     font-size: 24px;
     margin-bottom: 6vw;
+    color: white;
   }
 }
 
