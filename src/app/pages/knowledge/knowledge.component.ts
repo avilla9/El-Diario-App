@@ -374,8 +374,6 @@ export class KnowledgeComponent implements OnInit {
     this.articleService.articleList('Conocimiento')
       .subscribe((res: any) => {
         console.log('knowledge', res);
-        res.splice(2, 1); // el trabajo
-        res.splice(5, 1); // la compañia
         this.posts = res;
       }, (err: any) => {
         console.log(err);
