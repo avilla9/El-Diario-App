@@ -5,7 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>El Diario - Ocaso</string>
+	<string>El Diario - Ocaso</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>$PHOTO_LIBRARY_USAGE_DESCRIPTION</string>
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>$PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -48,7 +52,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
 </dict>
 </plist>
