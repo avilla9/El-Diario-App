@@ -26,6 +26,7 @@
     "@awesome-cordova-plugins/in-app-browser": "^5.41.0",
     "@capacitor/android": "^3.4.3",
     "@capacitor/app": "1.1.1",
+    "@capacitor/assets": "^2.0.4",
     "@capacitor/core": "^3.6.0",
     "@capacitor/device": "^4.1.0",
     "@capacitor/haptics": "1.1.4",
