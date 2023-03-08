@@ -1,33 +1,29 @@
 <div class="content" [hidden]="!pageStatus">
-    <div class="unauth-title">En este momento no hay ningun proyecto de adopción en proceso</div>
-    <br>
-    <div class="unauth-title">¡Te mantendremos informado!</div>
-    <img src="../../../assets/images/unauth.gif" class="unauth-alert">
-    <!-- <ion-select multiple="false" class="selector" (ionChange)="handleChange($event)" placeholder="Seleccionar campaña">
-    <ion-select-option *ngFor="let campaign of campaignsData; let i = index" [value]="campaign.id">
-      {{campaign.campaign_title}}
-    </ion-select-option>
-  </ion-select>
+    <ion-select multiple="false" class="selector" (ionChange)="handleChange($event)" placeholder="Seleccionar campaña">
+        <ion-select-option *ngFor="let campaign of campaignsData; let i = index" [value]="campaign.id">
+            {{campaign.campaign_title}}
+        </ion-select-option>
+    </ion-select>
 
-  <div class="boxes" [hidden]="!campaignSelected">
-    <div class="box" *ngFor="let data of campaignSelected?.slice(0,2); let i = index" (click)="clickBox(data)">
-      <img src="../../../assets/images/adoption/{{i+1}}.jpg">
-      <div class="float-content">
-        <div class="title">{{data.section}}</div>
-      </div>
+    <div class="boxes" [hidden]="!campaignSelected">
+        <div class="box" *ngFor="let data of campaignSelected?.slice(0,2); let i = index" (click)="clickBox(data)">
+            <img src="../../../assets/images/adoption/{{i+1}}.jpg">
+            <div class="float-content">
+                <div class="title">{{data.section}}</div>
+            </div>
+        </div>
+
+        <div class="box" id="open-modal" expand="block">
+            <img src="../../../assets/images/adoption/3.jpg">
+            <div class="float-content">
+                <div class="title">Lo que he conseguido</div>
+            </div>
+        </div>
     </div>
 
-    <div class="box" id="open-modal" expand="block">
-      <img src="../../../assets/images/adoption/3.jpg">
-      <div class="float-content">
-        <div class="title">Lo que he conseguido</div>
-      </div>
+    <div class="select-a-campaign" [hidden]="campaignSelected">
+        Seleccione una campaña
     </div>
-  </div>
-
-  <div class="select-a-campaign" [hidden]="campaignSelected">
-    Seleccione una campaña
-  </div> -->
 </div>
 
 <ion-modal trigger="open-modal">
