@@ -1,16 +1,16 @@
 <ion-header id="header" class="ion-no-border nnn">
-  <img class="logo" src="../../../assets/icon/el_diario.svg" />
-  <ion-icon class="open-menu" name="person-circle-outline" (click)="toggleMenuAccess()"></ion-icon>
+    <img class="logo" src="../../../assets/icon/el_diario.png" />
+    <ion-icon class="open-menu" name="person-circle-outline" (click)="toggleMenuAccess()"></ion-icon>
 </ion-header>
 
 <ion-content overflow-scroll="true">
-  <div class="container" *ngFor="let post of posts">
-    <div class="post-list" *ngFor="let article of post.articles" (click)="clickPost(article)">
-      <img src="{{article.media_path}}">
-      <div class="content">
-        <div class="title">{{article.title}}</div>
-      </div>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
+    <div class="container" *ngFor="let post of posts">
+        <div class="post-list" *ngFor="let article of post.articles" (click)="clickPost(article)">
+            <img src="{{article.media_path}}">
+            <div class="content">
+                <div class="title">{{article.title}}</div>
+            </div>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
     </div>
-  </div>
 </ion-content>
