@@ -23,4 +23,15 @@ export class PostAccessService {
       }
     );
   }
+
+  sendSectionAccess(data): Observable<any> {
+    // console.log(data);
+    return this.http.post(
+      this.apiUrl + '/posts/validate-section',
+      {
+        user_id: parseInt(localStorage.getItem('user_id'), 10),
+        "section_id": data.id
+      }
+    );
+  }
 }
