@@ -128,7 +128,7 @@ export class RoomsComponent implements OnInit {
     this.getPostAccess.sendSectionAccess(article).subscribe((res: any) => {
       console.log(res);
       if (res === 0) {
-        this.presentAlert();
+        this.showAlert();
       } else {
         this.clickPost(article);
       }
