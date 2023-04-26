@@ -3,6 +3,10 @@
     background-color: var(--ion-color-light-contrast);
 }
 
+.modalLogo {
+    height: 10vw;
+}
+
 .section-container {
     background-color: var(--ion-color-light-contrast);
     height: fit-content;
@@ -85,5 +89,27 @@ ion-footer {
     .tvc-logo {
         width: 13vw;
         height: 13vw;
+    }
+}
+
+ion-header {
+    padding: 5vw 5vw 5vw 5vw;
+}
+
+.modalContent {
+    padding: 5vw 10vw 10vw 10vw;
+    h1 {
+        color: #BF9000;
+        font-size: 25px;
+    }
+    p {
+        font-size: 15px;
+        color: #100c0c;
+        line-height: 7vw;
+    }
+    h2 {
+        line-height: 20px;
+        color: #BF9000;
+        font-size: 16px;
     }
 }
